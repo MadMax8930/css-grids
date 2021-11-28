@@ -1,0 +1,29 @@
+.photo-grid {
+    display: grid;
+    gap: 1rem;
+
+    /* Same as in basic grid */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    /* To set the rows height */ 
+    grid-auto-rows: 240px;
+}
+
+@media screen and (min-width: 600px) {
+    .card-tall {
+        grid-row: 2 span / auto;
+    }
+    .card-wide {
+        grid-column: 2 span / auto;
+    }
+    
+}
+
+    /* the grid-row property is used to change the size of a grid element (start / end) */ 
+    /* It's like saying start wherever span 2 rows and then automatically end wherever */
+    /* grid-row: span 2 / auto; */
+    /* or
+    /* horizontally start row 1 and end at row 4 */
+    /* grid-row: 1 / 4 ; */
+    /* vertically start row 3 and end at row 5 */ 
+    /* grid-column: 3 / 5; */ 

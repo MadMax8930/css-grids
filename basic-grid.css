@@ -1,0 +1,25 @@
+.basic-grid {
+    display: grid;
+    gap: 1rem;
+
+    /* 1fr is a fractional unit, which is the all available space, 1fr=100% */
+    /* 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr, here 1fr=8.3% (12 of them) */ 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    /* Much cleaner with css grid helper function repeat() */
+    /* Identical to previous, more readable */
+    grid-template-columns: repeat(12, 1fr);
+
+    /* Better sizing, but overflows on x-axis */
+    /* Using minmax() function where columns do go below 240px width */
+    grid-template-columns: repeat(12, minmax(240px, 1fr));
+
+    /* Create an Implicit Grid to add additional rows */
+    /* We are using auto-fit with repeat() */ 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    
+    /* Truly responsive */ 
+
+    /* auto-fill : creates additional columns when there is additional space */
+    /* auto-fit : expands its children to take up all of the available space */ 
+}
